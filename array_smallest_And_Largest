@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int smallest = INT_MAX;
+    int largest = INT_MIN;
+    int smallest_Index = 0;
+    int largest_Index = 0;
+    int size = 8;
+    int arr[] = {4,6,23,7,4,2,14,3};
+    for(int i = 0 ; i< size ; i++){
+        if(arr[i]<smallest){
+            smallest = arr[i];
+            smallest_Index = i;
+
+        }
+   
+    }
+
+    for(int i = 0 ; i< size ; i++){
+        if(arr[i]>largest){
+            largest = arr[i];
+            largest_Index = i;
+
+        }
+   
+    }
+cout<<"smallest = " << smallest<<" found at index = " << smallest_Index<<endl;
+cout<<"largest = " << largest<< " found at index = " << largest_Index<<endl;
+return 0;
+}
+
