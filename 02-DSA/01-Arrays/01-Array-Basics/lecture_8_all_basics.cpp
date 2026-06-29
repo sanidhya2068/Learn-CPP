@@ -318,3 +318,55 @@ cout<<"After swap: ";
 
 return 0;
 }
+
+
+
+3) write to print all tha unique value in array.
+
+int main(){
+    int size = 7;
+    int arr[] = {1,2,3,1,2,3,4};
+    for(int i=0;i<size;i++){
+
+        int count = 0;
+
+        for(int j=0;j<size;j++){
+
+            if(arr[i]==arr[j]){
+                count++;
+            }
+
+        }
+    if(count==1){
+        cout<<arr[i]<<endl;
+    }
+    }
+return 0;
+   
+
+}
+
+4) write a function to print intersection of two array.
+
+int main(){
+    int size = 11;
+    int arr[] = {1,2,3,4,7,5,43,673,254,365,88};
+    int arr2[] = {4,5,2,1,3,7,64,24,88,2452,34};
+
+    for(int i=0;i<size;i++){
+
+        for(int j=0;j<size;j++){
+
+        
+        if(arr[i]==arr2[j]){
+            cout<<arr[i]<<" ";
+            
+            
+           
+            
+        }
+    }
+  
+    }
+return 0;
+}
