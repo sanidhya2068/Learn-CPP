@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter the no.: ";
+    cin >> num;
+
+    if (num % 2 == 0) {
+        cout << num << "EVEN" << endl;
+    } else {
+        cout << num << "ODD" << endl;
+    }
+    return 0;
+}
