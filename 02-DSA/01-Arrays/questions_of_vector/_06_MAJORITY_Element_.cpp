@@ -1,4 +1,4 @@
-/MAJORITY ELEMENT  (brute force appraoch) (main function).
+//MAJORITY ELEMENT  (brute force appraoch) (main function).
 
 
 // int main(){
@@ -123,37 +123,37 @@ using namespace std;
 
 //MAJORITY ELEMENT(MOORE'S VOTING ALGORITM)).
 
-int main(){
-    int arr[] = {1,2,4};
-    int size = sizeof(arr)/sizeof(int);
-    int count=0 ,  ans =0;
+// int main(){
+//     int arr[] = {1,2,4};
+//     int size = sizeof(arr)/sizeof(int);
+//     int count=0 ,  ans =0;
 
-    for(int i =0;i<size;i++){
-        if(count==0){
-            ans = arr[i];
-        }
+//     for(int i =0;i<size;i++){
+//         if(count==0){
+//             ans = arr[i];
+//         }
 
-        if(arr[i]==ans){
-            count++;
-        }else{
-            count--;
+//         if(arr[i]==ans){
+//             count++;
+//         }else{
+//             count--;
         
-        }
+//         }
     
-    }
+//     }
 
-    int frequency = 0;
-    for(int i=0;i<size;i++){
-        if(arr[i]==ans){
-            frequency++;
-        }
-    }
-    if(frequency>size/2){
-        cout<<ans;
-    }else{
-        cout<<"KOI MAJORITY ELEMENT NAHI HAI.";
-    }
+//     int frequency = 0;
+//     for(int i=0;i<size;i++){
+//         if(arr[i]==ans){
+//             frequency++;
+//         }
+//     }
+//     if(frequency>size/2){
+//         cout<<ans;
+//     }else{
+//         cout<<"KOI MAJORITY ELEMENT NAHI HAI.";
+//     }
    
     
-return 0;
-}
+// return 0;
+// }
