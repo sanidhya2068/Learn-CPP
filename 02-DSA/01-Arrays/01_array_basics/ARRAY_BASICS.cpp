@@ -75,7 +75,7 @@ cout<<"LARGEST VALUE: "<< largest <<endl;
 return 0;}
 
 
-// PRINTING THE INDEX BY TAKING NUMBER->
+// PRINTING THE INDEX BY TAKING NUMBER->(LINEAR SEARCH)
 
 int main(){
     int num = 10;
@@ -170,7 +170,7 @@ int main(){
 return 0;
 }
 
-// REVERSE OF AN ARRAY
+// REVERSE OF AN ARRAY(TWO POINTER APPROACH)
 
 int main(){
     int size = 8;
