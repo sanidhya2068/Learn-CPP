@@ -1,4 +1,4 @@
-2) TO PRINT  SUBARRAY SUM.
+// 2) TO PRINT  SUBARRAY SUM.
 
 int main(){
     int size = 7; 
