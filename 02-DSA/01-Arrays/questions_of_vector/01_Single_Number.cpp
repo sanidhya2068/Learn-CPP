@@ -1,6 +1,6 @@
 QUESTIONS OF VECTOR-->
 
-1) SINGLE NUMBER 
+// 1) SINGLE NUMBER 
 
 int singleNumber(){
    vector<int>nums = {1,2,3,4,3,2,1};
