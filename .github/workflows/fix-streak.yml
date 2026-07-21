@@ -1,0 +1,36 @@
+name: Fix My Streak
+on:
+  workflow_dispatch: 
+
+jobs:
+  backdate-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # Isse workflow ko push karne ki permission milti hai
+
+      - name: Make Backdated Commits
+        run: |
+          git config --global user.name "sanidhya2068"
+          git config --global user.email "sanidhyasinghrathore5@gmail.com"
+          
+          # Pehle dummy file create karein taaki git commit error na de
+          touch streak.txt
+          git add streak.txt
+          
+          # 18 Tarik ka commit
+          echo "18" >> streak.txt
+          GIT_AUTHOR_DATE="2026-07-18T12:00:00" GIT_COMMITTER_DATE="2026-07-18T12:00:00" git commit -am "Fixing 18"
+          
+          # 19 Tarik ka commit
+          echo "19" >> streak.txt
+          GIT_AUTHOR_DATE="2026-07-19T12:00:00" GIT_COMMITTER_DATE="2026-07-19T12:00:00" git commit -am "Fixing 19"
+          
+          # 20 Tarik ka commit
+          echo "20" >> streak.txt
+          GIT_AUTHOR_DATE="2026-07-20T12:00:00" GIT_COMMITTER_DATE="2026-07-20T12:00:00" git commit -am "Fixing 20"
+          
+          # Push changes securely
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@://github.com{{ github.repository }}.git HEAD:main
