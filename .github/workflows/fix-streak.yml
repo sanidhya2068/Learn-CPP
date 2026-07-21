@@ -2,37 +2,37 @@ name: Fix My Streak
 on:
   workflow_dispatch: 
 
+# Isse workflow ko repository me commit push karne ka official access milega
+permissions:
+  contents: write
+
 jobs:
   backdate-commit:
     runs-on: ubuntu-latest
-    env:
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true # Node version error bypass karne ke liye
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Make Backdated Commits
         run: |
           git config --global user.name "sanidhya2068"
           git config --global user.email "sanidhyasinghrathore5@gmail.com"
           
-          # Empty file setup taaki error na aaye
+          # Pehle check karein agar file nahi hai toh create karein
           touch streak.txt
           git add streak.txt
           
           # 18 Tarik ka commit
-          echo "18 July" >> streak.txt
+          echo "18 July Fix" >> streak.txt
           GIT_AUTHOR_DATE="2026-07-18T12:00:00" GIT_COMMITTER_DATE="2026-07-18T12:00:00" git commit -am "Fixing 18"
           
           # 19 Tarik ka commit
-          echo "19 July" >> streak.txt
+          echo "19 July Fix" >> streak.txt
           GIT_AUTHOR_DATE="2026-07-19T12:00:00" GIT_COMMITTER_DATE="2026-07-19T12:00:00" git commit -am "Fixing 19"
           
           # 20 Tarik ka commit
-          echo "20 July" >> streak.txt
+          echo "20 July Fix" >> streak.txt
           GIT_AUTHOR_DATE="2026-07-20T12:00:00" GIT_COMMITTER_DATE="2026-07-20T12:00:00" git commit -am "Fixing 20"
           
-          # Securely push to main branch
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@://github.com{{ github.repository }}.git HEAD:main
+          # Push changes directly
+          git push origin HEAD:main
