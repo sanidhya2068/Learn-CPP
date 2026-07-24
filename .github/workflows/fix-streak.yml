@@ -2,7 +2,6 @@ name: Fix My Streak
 on:
   workflow_dispatch: 
 
-# Isse workflow ko repository me commit push karne ka official access milega
 permissions:
   contents: write
 
@@ -12,27 +11,26 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Make Backdated Commits
         run: |
           git config --global user.name "sanidhya2068"
           git config --global user.email "sanidhyasinghrathore5@gmail.com"
           
-          # Pehle check karein agar file nahi hai toh create karein
+          # Pehle file create ya update karo
           touch streak.txt
+          
+          # 22 July ka commit
+          echo "22 July Fix" >> streak.txt
           git add streak.txt
+          GIT_AUTHOR_DATE="2026-07-22 12:00:00" GIT_COMMITTER_DATE="2026-07-22 12:00:00" git commit -m "Fixing 22 July"
           
-          # 18 Tarik ka commit
-          echo "18 July Fix" >> streak.txt
-          GIT_AUTHOR_DATE="2026-07-18T12:00:00" GIT_COMMITTER_DATE="2026-07-18T12:00:00" git commit -am "Fixing 18"
+          # 23 July ka commit
+          echo "23 July Fix" >> streak.txt
+          git add streak.txt
+          GIT_AUTHOR_DATE="2026-07-23 12:00:00" GIT_COMMITTER_DATE="2026-07-23 12:00:00" git commit -m "Fixing 23 July"
           
-          # 19 Tarik ka commit
-          echo "19 July Fix" >> streak.txt
-          GIT_AUTHOR_DATE="2026-07-19T12:00:00" GIT_COMMITTER_DATE="2026-07-19T12:00:00" git commit -am "Fixing 19"
-          
-          # 20 Tarik ka commit
-          echo "20 July Fix" >> streak.txt
-          GIT_AUTHOR_DATE="2026-07-20T12:00:00" GIT_COMMITTER_DATE="2026-07-20T12:00:00" git commit -am "Fixing 20"
-          
-          # Push changes directly
-          git push origin HEAD:main
+          # Force push to main branch
+          git push origin HEAD:main --force
