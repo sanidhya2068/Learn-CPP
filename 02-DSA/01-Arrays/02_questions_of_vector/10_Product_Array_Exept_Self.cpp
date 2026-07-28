@@ -28,7 +28,7 @@
 // return 0;
 // }
 
-// (PREFIX (LEFT) AND SUFFIX (RIGHT)PRODUCT APPROACH)
+// (PREFIX (LEFT) AND SUFFIX (RIGHT) PRODUCT APPROACH).
 
 // int main(){
 //     vector<int>arr = {1,2,3,4};
