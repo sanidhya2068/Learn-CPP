@@ -3,7 +3,7 @@
 
 // CALCULATE SMALLEST AND LARGEST VALUE (method 1)
 
-// SMALLEST VALUE
+// SMALLEST VALUE.
 
 int main(){
     int smallest = INT_MAX;
